@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Take a sec",
+  "description": "Habit Making, Url Blocking Extension",
+  "version": "0.1.0",
+  "permissions": [
+    "tabs",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "scripts/background.js"
+},
+"content_scripts":[{
+  "matches":["<all_urls>"],
+  "js":["scripts/slowdown-script.js"]
+}],
+"action":{
+  "default_title": "Click for settings",
+  "default_popup": "popup/popup.html"
+}
+
+}
